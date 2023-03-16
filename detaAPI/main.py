@@ -18,9 +18,6 @@ def bienevenida():
 def menu():
     return "Las funciones que encontrara son las siguientes: (1) get_max_duration (2) get_score_count (3) get_count_platform (4) get_actor"
 
-@app.get("/contacto")
-def contacto():
-    return "GitHub: FrancoJALaborde , Mail: jose_ariel_franco@hotmail.com"
 
 
 #---------- Queries-----
@@ -28,7 +25,7 @@ def contacto():
 @app.get("/get_max_duratio/{year}/{platform}/{duration_type}")
 def get_max_duration(year: Optional[int] = None, platform: Optional[str] = None, duration_type: Optional[str] = 'min'):
     #Lectura de la base de datos:
-    df = pd.read_csv('plataformas_completo.csv')
+    df = pd.read_csv('detaAPI/plataformas.csv')
 
     # Verificar que la plataforma sea una de las opciones válidas
     if platform is not None and platform.lower() not in ['disney', 'amazon', 'hulu', 'netflix']:
@@ -54,7 +51,7 @@ def get_max_duration(year: Optional[int] = None, platform: Optional[str] = None,
 @app.get("/get_score_count/{platform}/{scored}/{release_year}")
 def get_score_count(platform : str, scored : float, release_year: int):
     #Lectura de la base de datos:
-    df = pd.read_csv('plataformas_completo.csv')
+    df = pd.read_csv('detaAPI//plataformas_completo.csv')
 
     # Verificar que la plataforma sea una de las opciones válidas
     if platform is not None and platform.lower() not in ['disney', 'amazon', 'hulu', 'netflix']:
@@ -73,7 +70,7 @@ def get_score_count(platform : str, scored : float, release_year: int):
 @app.get("/get_count_platform/{platform}")
 def get_count_platform(platform: str):
     #Lectura de la base de datos:
-    df = pd.read_csv('plataformas_completo.csv')
+    df = pd.read_csv('detaAPI/plataformas_completo.csv')
 
     # Verificar que la plataforma sea una de las opciones válidas
     if platform is not None and platform.lower() not in ['disney', 'amazon', 'hulu', 'netflix']:
@@ -92,7 +89,7 @@ def get_count_platform(platform: str):
 @app.get("/get_actor/{platform}/{year}")
 def get_actor(platform : str, year: int):
     #Lectura de la base de datos:
-    df = pd.read_csv('plataformas_completo.csv')
+    df = pd.read_csv('detaAPI/plataformas_completo.csv')
 
     # Verificar que la plataforma sea una de las opciones válidas
     if platform is not None and platform.lower() not in ['disney', 'amazon', 'hulu', 'netflix']:
@@ -114,3 +111,9 @@ def get_actor(platform : str, year: int):
     
     return JSONResponse(content=jsonable_encoder(actor_repetido))
     
+
+"""
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+"""

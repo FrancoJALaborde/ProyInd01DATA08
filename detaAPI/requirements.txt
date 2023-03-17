@@ -3,4 +3,4 @@ fastapi==0.94.0
 pandas
 typing_extensions==4.5.0
 gradio==3.21.0
-ffmpy --use-pep517
+

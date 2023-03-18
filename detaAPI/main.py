@@ -114,7 +114,8 @@ def get_actor(platform : str, year: int):
     return JSONResponse(content=jsonable_encoder(actor_repetido))
     
 
-
+"""
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+"""

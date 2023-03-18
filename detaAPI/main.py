@@ -86,7 +86,7 @@ def get_count_platform(platform: str):
 
     return conteo
 
-
+"""
 #Cuarta consigna: Actor que más se repite según plataforma y año.
 @app.get("/get_actor/{platform}/{year}")
 def get_actor(platform : str, year: int):
@@ -100,16 +100,48 @@ def get_actor(platform : str, year: int):
     filtro= df[(df.release_year == year) & (df.platform == platform)]
     # Poner el cast en un array para poder hacer el recorrido
 
+    
     cast= filtro.assign(actor=df.cast.str.split(',')).explode('cast')
-     # Contar la cantidad de apariciones de cada actor
+    # Contar la cantidad de apariciones de cada actor
     actor_counts = cast['cast'].value_counts()
 
     # Obtener el actor que más se repite y su cantidad de apariciones
-    max_actor = actor_counts.index[0]
-    max_count = int(actor_counts.iloc[0])
+    if not actor_counts.empty:
+        max_actor = actor_counts.index[0]
+        max_count = int(actor_counts.iloc[0])
 
     # Creando un diccionario para poder ver los resultados 
     actor_repetido = {'actor': max_actor, 'count': max_count}
     
     return JSONResponse(content=jsonable_encoder(actor_repetido))
-    
+"""    
+@app.get("/get_actor/{platform}/{year}")
+def get_actor(platform: str, year: int):
+    # Lectura de la base de datos:
+    df = pd.read_csv('plataformas_completo.csv')
+
+    # Verificar que la plataforma sea una de las opciones válidas
+    if platform is not None and platform.lower() not in ['disney', 'amazon', 'hulu', 'netflix']:
+        raise ValueError("La plataforma debe ser una de las opciones válidas: Disney, Amazon, Hulu o Netflix.")
+
+    filtro = df[(df.release_year == year) & (df.platform == platform)]
+
+    if filtro.empty:
+        return JSONResponse(content={"message": "No se encontraron registros para los parámetros proporcionados."})
+
+    cast = filtro.assign(actor=df.cast.str.split(',')).explode('actor')
+    actor_counts = cast['actor'].value_counts()
+
+    if not actor_counts.empty:
+        max_actor = actor_counts.index[0]
+        max_count = int(actor_counts.iloc[0])
+
+        actor_repetido = {'actor': max_actor, 'count': max_count}
+
+        return JSONResponse(content=jsonable_encoder(actor_repetido))
+    else:
+        return JSONResponse(content={"message": "No se encontraron actores para los parámetros proporcionados."})
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -3,5 +3,4 @@ fastapi
 pandas
 typing_extensions
 gradio
-uvicorn[standar]
-flask
+uvicorn

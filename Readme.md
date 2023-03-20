@@ -30,5 +30,5 @@
 
 
 
-**[Video](https://youtu.be/6z1hTmLK1cg)** : Realice un video mostrando la API, sus consultas, como funciona el sistema de recomedación y mostrando el repositorio.
+**[Video](https://www.youtube.com/live/1d_BtSUzCdE?feature=share)** : Realice un video mostrando la API, sus consultas, como funciona el sistema de recomedación y mostrando el repositorio.
 

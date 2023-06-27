@@ -2,33 +2,33 @@
 
 <h1 align=center> HENRY’S LABS </h1>
 
-<h2>PROYECTO INDIVIDUAL I DATA 08 -- Data Engineer Machine Learning Api <br><br>
+<h2>INDIVIDUAL PROJECT I DATA 08 -- Data Engineer Machine Learning Api <br><br>
 
-**Glorasio del proyecto** 
+**Project glossary** 
 
-**Datasets**: Bases de datos recibidas
+**Datasets**: Received databases
 
-**detaAPI**: Dentro encontraran un archivo main.py que contiene todo el codigo de la API. Requierements.txt que contiene las dependencias necesarias para que funcione y el csv utilizado para realizar todas las consultas
+**detaAPI**: Inside you will find a main.py file that contains all the API code. Requierements.txt containing the dependencies necessary for it to work and the csv used to perform all the queries
 
-**Trasformacion de datos**:  Paso a paso detallado del proceso de ETL
+**Trasformacion de datos**:  Detailed step by step of the ETL process
 
-**Analisis_exploratorio_de_datos**: Paso a paso del proceso de EDA y el modelo de recomendación
+**Analisis_exploratorio_de_datos**: Step by step of the EDA process and the recommendation model
 
-**Modelo_de_recomendación**: Paso a paso del deserrollo del modelo de recomendación
-
-<br>
-
-**Funciones de la API:**
-
-* Película con mayor duración con filtros opcionales de AÑO, PLATAFORMA Y TIPO DE DURACIÓN.
-* Cantidad de películas por plataforma con un puntaje mayor a XX en determinado año
-* Cantidad de películas por plataforma con filtro de PLATAFORMA
-* Actor que más se repite según plataforma y año.
+**Modelo_de_recomendación**: Step by step development of the recommendation model
 
 <br>
 
+**API functions:**
+
+* Movie with longer duration with optional filters of YEAR, PLATFORM AND TYPE OF DURATION.
+* Number of films by platform with a score greater than XX in a given year.
+* Number of movies per platform with PLATFORM filter.
+* Actor who repeats himself the most according to platform and year.
+
+<br>
 
 
 
-**[Video](https://www.youtube.com/live/1d_BtSUzCdE?feature=share)** : Realice un video mostrando la API, sus consultas, como funciona el sistema de recomedación y mostrando el repositorio.
+
+**[Video](https://www.youtube.com/live/1d_BtSUzCdE?feature=share)** : Make a video showing the API, its queries, how the recommendation system works and showing the repository.
 

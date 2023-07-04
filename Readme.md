@@ -1,5 +1,3 @@
-
-
 <h1 align=center> HENRY’S LABS </h1>
 
 <h2>INDIVIDUAL PROJECT I DATA 08 -- Data Engineer Machine Learning Api <br><br>
@@ -31,4 +29,3 @@
 
 
 **[Video](https://www.youtube.com/live/1d_BtSUzCdE?feature=share)** : Make a video showing the API, its queries, how the recommendation system works and showing the repository.
-
